@@ -8,65 +8,65 @@ tap 'homebrew/bundle'
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
-brew 'bat' # "cat" on steroids
 brew 'coreutils' # Those that come with macOS are outdated
+brew 'curl'
+brew 'curl-ssl'
 brew 'git'
+brew 'git-ftp'
 brew 'gnupg2'
 brew 'grep'
-brew 'httpie'
-brew 'hub'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+brew 's3cmd'
 brew 'trash' # Manage the Trash bin
-brew 'tree' # List directories in a tree structure
-brew 'zlib' # Needed for Memcached
 
 # Development
 brew 'php'
 brew 'php@7.3'
 brew 'php@7.2'
+brew 'php@7.1'
 brew 'composer'
-brew 'imagemagick'
-brew 'mysql'
-brew 'nginx'
 brew 'node'
-brew 'redis'
+brew 'sqlite'
+brew 'the_silver_searcher'
 brew 'yarn'
+brew 'brew-php-switcher'
 
 # Apps
 cask '1password'
-cask 'aerial'
-cask 'alfred'
-cask 'bartender'
-cask 'caffeine'
-cask 'discord'
+cask 'backblaze'
+cask 'cleanmymac'
+cask 'dbvisualizer'
 cask 'docker'
+cask 'fantastical'
 cask 'firefox'
-cask 'github'
-cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'gpg-suite'
-cask 'insomnia'
-cask 'java'
+cask 'iterm2'
+cask 'kaleidoscope'
+cask 'jet' # Used for codeship testing
+cask 'mactracker'
+cask 'mjml'
 cask 'mysqlworkbench'
 cask 'phpstorm'
-cask 'screenflow'
-cask 'sip'
+cask 'postman'
+cask 'private-internet-access'
+cask 'rescuetime'
+cask 'rocket'
+cask 'sequel-pro'
 cask 'skype'
 cask 'slack'
 cask 'sublime-text'
+cask 'superduper'
 cask 'tableplus'
-cask 'telegram-desktop'
+cask 'teamviewer'
 cask 'the-unarchiver'
-cask 'tor-browser'
-cask 'transmission'
+cask 'tower'
+cask 'tripmode'
 cask 'transmit'
-cask 'vagrant'
-cask 'virtualbox' # Might need to allow access in Security settings
-cask 'virtualbox-extension-pack'
+cask 'unlox'
 cask 'vlc'
-cask 'whatsapp'
+cask 'zoomus'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -78,18 +78,21 @@ cask 'qlstephen'
 # Fonts
 cask 'font-lato'
 cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-roboto-condensed'
-cask 'font-source-code-pro-for-powerline'
+cask 'font-fira-code'
+cask 'font-fira-mono'
 cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
+cask 'font-source-code-pro-for-powerline'
+cask 'font-ubuntu'
+cask 'font-ubuntu-mono-derivative-powerline'
 
 # Mac App Store
-mas 'Byword', id: 420212497
-mas 'Giphy Capture', id: 668208984
 mas 'Keynote', id: 409183694
 mas 'Numbers', id: 409203825
-mas 'Spark', id: 1176895641
-mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
+mas 'Pages', id: 409201541
+mas 'WiFi Explorer', id: 494803304
+mas 'Caffeine', id: 411246225
+mas 'Bear', id: 1091189122
+mas 'Moom', id: 419330170
+mas 'Condense', id: 715394237
+mas 'Better', id: 1121192229
+mas 'Microsoft Remote Desktop', id: 1295203466

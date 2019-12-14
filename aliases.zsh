@@ -3,11 +3,10 @@ alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -ahlF --color --group-directories-first"
-weather() { curl -4 wttr.in/${1:-antwerp} }
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
-alias zbundle="antibody bundle < $DOTFILES/zsh_plugins.txt > $DOTFILES/zsh_plugins.sh"
+alias diff='diff -u'
+alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
 # Directories
 alias dotfiles="cd $DOTFILES"
@@ -16,43 +15,41 @@ alias sites="cd $HOME/Sites"
 alias lara="sites && cd laravel/"
 
 # Laravel
-alias a="php artisan"
+alias a='DB_HOST=127.0.0.1 php artisan'
 alias ams="php artisan migrate:fresh --seed"
 
 # PHP
 alias php73="/usr/local/Cellar/php@7.3/7.3.12/bin/php"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
+alias cs-fixer='~/.composer/vendor/bin/php-cs-fixer'
+alias cs-fix='cs-fixer --config=/Users/oniryx/.php_cs fix '
+alias cs-staged='for staged in `git dc --name-only`; do cs-fix -q $staged; done;'
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias watch="npm run watch"
 
-# Vagrant
-alias v="vagrant global-status"
-alias vup="vagrant up"
-alias vhalt="vagrant halt"
-alias vssh="vagrant ssh"
-alias vreload="vagrant reload"
-alias vrebuild="vagrant destroy --force && vagrant up"
+# MySQL
+db_refresh() {
+    mysqladmin --force --silent drop $1
+    mysqladmin create $1
+    echo "Database \"$1\" created"
+}
+
+db_load() {
+    bunzip2 -c ~/Documents/DatabaseDumps/elsieapp_db_dump/$1.sql.bz2| mysql $1
+    echo "\"$1.sql.bz2\" loaded"
+}
+
+db_reload() {
+    db_refresh $1
+    db_load $1
+}
+
 
 # Docker
 alias docker-composer="docker-compose"
-#alias dstop="docker stop $(docker ps -a -q)"
-#alias dpurgecontainers="dstop && docker rm $(docker ps -a -q)"
-#alias dpurgeimages="docker rmi $(docker images -q)"
-#dbuild() { docker build -t=$1 .; }
-#dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+alias devil-up="docker-compose up -d php httpd mysql mailhog"
 
 # Git
-alias commit="git add . && git commit -m"
-alias gcommit="git add . && git commit"
-alias amend="git commit --amend --no-edit"
-alias amendall="git add . && amend"
-alias wip="commit wip"
-alias gst="git status"
-alias gb="git branch"
-alias gc="git checkout"
-alias gd="git diff"
-alias resolve="git add . && git commit --no-edit"
-alias gl="git log --oneline --decorate --color"
-alias nuke="git clean -df && git reset --hard"
+alias nah="git reset --hard && git clean -df"
