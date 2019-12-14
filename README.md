@@ -33,6 +33,7 @@ If you did all of the above you may now follow these install instructions to set
 4. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
 5. Clone this repo to `~/.dotfiles`
 6. Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started)
+7. Install [Zsh Theme powerlevel10k](https://github.com/romkatv/powerlevel10k) `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
 6. Run `install.sh` to start the installation
 7. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
 8. Restart your computer to finalize the process
