@@ -11,3 +11,12 @@ export PATH="node_modules/.bin:vendor/bin:$PATH"
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+export PATH="/usr/local/sbin:$PATH"
+
+# DEPRECATED?
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export PATH=$PATH:~/.composer/vendor/bin
+# export PATH=$PATH:~/Dropbox/Work/tools
+# export PATH="~/.yarn/bin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"

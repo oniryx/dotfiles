@@ -10,7 +10,6 @@ brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'curl'
-brew 'curl-ssl'
 brew 'git'
 brew 'git-ftp'
 brew 'gnupg2'
@@ -25,7 +24,6 @@ brew 'trash' # Manage the Trash bin
 brew 'php'
 brew 'php@7.3'
 brew 'php@7.2'
-brew 'php@7.1'
 brew 'composer'
 brew 'node'
 brew 'sqlite'

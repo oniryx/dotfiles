@@ -1,13 +1,16 @@
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # Good ones -> agnoster theunraveler sorin muse
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -69,11 +72,13 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump brew rsync)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -97,22 +102,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# DEPRECATED?
-# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export PATH=$PATH:~/.composer/vendor/bin
-# export PATH=$PATH:~/Dropbox/Work/tools
-# export PATH="~/.yarn/bin:$PATH"
-# export PATH="/usr/local/sbin:$PATH"
 
 # Env variable for laravel to go into docker database
 export DB_HOST=127.0.0.1
 
+[[ -f "${DOTFILES}/aliases.zsh" ]] && source "${DOTFILES}/aliases.zsh"
+
+[[ -f "${DOTFILES}/path.zsh" ]] && source "${DOTFILES}/path.zsh"
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))
 zstyle ':completion:*:hosts' hosts $_ssh_config
-
-test -e "${DOTFILES}/.iterm2_shell_integration.zsh" && source "${DOTFILES}/.iterm2_shell_integration.zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
 [[ -f "${DOTFILES}/.p10k.zsh" ]] && source "${DOTFILES}/.p10k.zsh"
