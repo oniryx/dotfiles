@@ -38,3 +38,14 @@ Thumbs.db
 .idea/
 .vscode
 .vagrant/
+*.cache
+*.bak
+storage/debugbar/
+
+
+.env_*
+node_modules
+docs/.vuepress
+laravel/storage/debugbar/
+_ide_helper.php
+ray.php

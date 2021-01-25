@@ -14,9 +14,8 @@ export PATH="node_modules/.bin:vendor/bin:$PATH"
 
 export PATH="/usr/local/sbin:$PATH"
 
-# DEPRECATED?
-# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export PATH=$PATH:~/.composer/vendor/bin
-# export PATH=$PATH:~/Dropbox/Work/tools
-# export PATH="~/.yarn/bin:$PATH"
-# export PATH="/usr/local/sbin:$PATH"
+# Load mysql-client
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# Load work tools
+export PATH="$PATH:$HOME/Documents/Work/tools"

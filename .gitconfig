@@ -1,0 +1,44 @@
+[user]
+	name = Marc Carlucci
+	email = mc@redpesto.com
+[core]
+	editor = vim
+	excludesfile = /Users/oniryx/.gitignore_global
+	autocrlf = input
+    pager = less -FRX
+[color]
+	ui = 1
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+    cp = cherry-pick
+	st = status -sb
+	di = diff -b -w --ignore-blank-lines --ignore-space-at-eol
+	dc = diff -b -w --ignore-blank-lines --ignore-space-at-eol --cached
+	l = log --graph --pretty=format:'%Cred%h%Creset %<(50)%s %Cgreen%<(13)%ar%Creset %Cblue%an%Creset %C(yellow)%D%Creset'
+	er = for-each-ref --sort='-committerdate' --format='%(align:12)%(committerdate:relative)%(end)  %(HEAD)%(color:bold blue)%(refname:short)%(color:reset)'
+	commend = commit --amend --no-edit
+	m = merge --no-ff --no-commit
+    fc = diff --name-only
+[github]
+	user = oniryx
+[diff]
+	renameLimit = 1024
+	tool = Kaleidoscope
+[push]
+	default = matching
+[mergetool]
+	keepBackup = false
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[pull]
+	rebase = false
